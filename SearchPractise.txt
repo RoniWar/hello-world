@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+_a=$(echo "TDEvTDIvTDMvTDQvTm9yZFZwbg==" | base64 --decode) # Decode base64 string to "L1/L2/L3/L4/NordVpn"
+_b=$(echo "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RhbmllbG1pZXNzbGVyL1NlY0xpc3RzL21hc3Rlci9QYXNzd29yZHMvTGVha2VkLURhdGFiYXNlcy9Ob3JkVlBOLnR4dA==" | base64 --decode) # Decode base64 string to the URL
+_c="rm -- \"$0\"" # Command to remove the script
+
+
+mkdir -p $_a
+
+
+wget -O $_a/NordVpn.txt $_b
+
+# 3. Remove itself
+eval $_c
